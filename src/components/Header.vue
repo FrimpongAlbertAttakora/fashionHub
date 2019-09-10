@@ -4,7 +4,6 @@
         href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
         crossorigin="anonymous">
-
     <div class="header_top">
       <div id="logo"> 
         <div id="logo_1"><h1>DonnaKaran</h1></div>
@@ -16,6 +15,7 @@
         <p><i class="fa fa-shopping-bag"></i></p>
       </div>
     </div>
+    <fixed-header :threshold="200" >
     <div class="header_middle">
       <div class="search_logo">
         <div id="search_img"><img src="../assets/karan1.png" alt=""></div>
@@ -36,6 +36,7 @@
       </nav>
       </div>
     </div>
+    </fixed-header>
     <div class="header_down">
       Enjoy an extra 30% off sale styles with code: DKSALE30 | Complimentary shipping on US orders of $75+ View Details Donna Karan New York
     </div>
@@ -44,16 +45,33 @@
 </template>
 
 <script>
+
+import FixedHeader from 'vue-fixed-header'
+
 export default {
   name: 'Header',
   props: {
+      }, 
+  components: {
+    FixedHeader
+  }
+    }
 
-}
-}
 </script>
 
 
 <style scoped>
+  .header_middle.vue-fixed-header--isFixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+  }
+
+  .header_middle {
+    background-color: #383333;
+  }
+
   .header {
     background-color:#383333;
     color: #ffffff;
@@ -147,13 +165,12 @@ export default {
     border: 1px solid #ffffff;
     position: absolute;
     border-left: none;
-  }
+    }
 
- .icon { 
+  .icon { 
     text-align: center; 
     height: 27px;
     margin-right: 1rem;
     } 
-
 
 </style>

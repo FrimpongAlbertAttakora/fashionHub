@@ -83,6 +83,7 @@ export default {
     background-color:#000;
     color: #ffffff;
     height: 20rem;
+    font-size: 14px;
 }
 
 .footer-main div{
